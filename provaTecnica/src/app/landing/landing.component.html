@@ -1,0 +1,16 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+
+
+    <article class="" *ngFor="let item of photographers">
+        <div class="thumbnail">
+            <a [routerLink]="['/detail',item.id]">
+        <img src="{{item.image}}" alt="{{item.first_name}}" class="portrait">
+    </a>
+        </div>
+        <div class="d-flex flex-row justify-content-between p-3">
+            <h2 class="authorName ">{{item.first_name}} {{item.last_name}}</h2>
+            <img class="svgStyle" src="assets/svg/ic_heart.svg" alt="heart">
+        </div>
+    </article>
+<app-footer></app-footer>

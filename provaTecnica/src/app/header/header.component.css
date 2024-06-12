@@ -1,0 +1,18 @@
+.svgStyle{
+    width: 30px;
+    height: 30px;
+    fill: white;
+    margin-right: 10px;
+}
+.title{
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.subtitle{
+    color: black;
+    font-size: 0.6em;
+}
+header{
+    background-color:  #d99079;
+}

@@ -1,0 +1,27 @@
+.svgStyleCalendar {
+    background-color: #d99079;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 3em;
+    height: 3em;
+}
+.svgStyleArtworks {
+    background-color: #989e9c;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 3em;
+    height: 3em;
+}
+.svgStyleMap {
+    background-color: #c2b782;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 3em;
+    height: 3em;
+}
