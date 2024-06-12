@@ -1,25 +1,15 @@
-import { DBConfig } from "ngx-indexed-db";
-
-export const dbConfig: DBConfig = {
-    name: "PhotographersDB",
-    version: 1,
-    objectStoresMeta: [
-        {
-            store: "photographers",
-            storeConfig: { keyPath: "id", autoIncrement: true },
-            storeSchema: [
-                { name: "guid", keypath: "guid", options: { unique: true } },
-                { name: "email", keypath: "email", options: { unique: true } },
-                { name: "first_name", keypath: "first_name", options: { unique: false } },
-                { name: "last_name", keypath: "last_name", options: { unique: false } },
-                { name: "is_removed", keypath: "is_removed", options: { unique: false } },
-                { name: "description", keypath: "description", options: { unique: false } },
-                { name: "avatar", keypath: "avatar", options: { unique: false } },
-                { name: "image", keypath: "image", options: { unique: false } },
-                { name: "facebook", keypath: "facebook", options: { unique: false } },
-                { name: "instagram", keypath: "instagram", options: { unique: false } },
-                { name: "webpage", keypath: "webpage", options: { unique: false } },
-            ],
-        },
-    ],
-};
+import Dexie, { Table } from 'dexie'
+import { Photographer } from '../model/photographer.model'
+// Creació de la base de dades IndexedDB amb Dexie
+export class PhotographersDB extends Dexie {
+  // Taula per emmagatzemar les dades
+  photographers!: Table<Photographer, number>
+  constructor () {
+    super('PhotographersDB')
+    // Versió de la base de dades i creació de la taula photographers
+    this.version(1).stores({
+      photographers: '++id,guid,email,first_name,last_name,is_removed,description,avatar,image,facebook,instagram,webpage'
+    })
+  }
+}
+export const db = new PhotographersDB()
